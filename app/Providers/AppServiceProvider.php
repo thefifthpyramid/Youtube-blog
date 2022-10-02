@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 use Route;
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $settings = Setting::checkSettings();
+        view()->share([
+            'setting' => $settings
+        ]);
     }
 }

@@ -35,7 +35,7 @@ return [
     'password'=>'Password',
     'home'=>'Home Page',
     'widgets'=>'ًًWidgets',
-    'general'=>'General',
+    'generalSettings'=>'General Settings',
     ''=>'',
     ''=>'',
     ''=>'',

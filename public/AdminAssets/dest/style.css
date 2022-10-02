@@ -4909,7 +4909,7 @@ header.navbar {
   height: 55px;
   padding: 0;
   line-height: 55px;
-  background-color: #263238;
+  background-color: #fff;
   border-bottom: 1px solid #cfd8dc; }
   header.navbar .container-fluid {
     padding: 0; }
@@ -4938,7 +4938,11 @@ header.navbar {
     height: 55px;
     padding: 8px 16px;
     padding: 0.5rem 1rem;
-    background-color: #263238;
+    background-color: #fff;
+    background-image: url("../img/coreui-logotyp.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 70px auto;
     border-bottom: 1px solid #cfd8dc; }
 
 header.navbar .navbar-brand {
@@ -4958,9 +4962,9 @@ header.navbar .navbar-nav .nav-link {
     color: rgba(0, 0, 0, 0.8); }
 
 .navbar-nav .nav-link {
-  color: #ffffff; 
-}
-.navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {color: #ffffffd9;}
+  color: rgba(0, 0, 0, 0.3); }
+  .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 0.6); }
 .navbar-nav .open > .nav-link, .navbar-nav .open > .nav-link:focus, .navbar-nav .open > .nav-link:hover,
 .navbar-nav .active > .nav-link,
 .navbar-nav .active > .nav-link:focus,
@@ -7731,24 +7735,3 @@ base-chart.chart {
         margin-right: 0; }
     body.mobile-open .main {
       margin-right: 200px !important; } }
-
-/* My Style */
-header.navbar a.navbar-brand {
-  display: inline-block;
-  width: 155px;
-  height: 55px;
-  padding: 0 32px !important;
-  background-color: #263238;
-  border-bottom: 1px solid #cfd8dc;
-  color: #0093c7;
-  font-size: 13px;
-  /* font-family: auto; */
-  text-align: center;
-  font-weight: bold;
-}
-*{
-  font-family: 'Cairo', sans-serif;
-}
-.text-center{
-  text-align: center;
-}

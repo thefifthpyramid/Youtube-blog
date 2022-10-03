@@ -6,21 +6,21 @@
         <li class="breadcrumb-item">{{ __('words.dashboard') }}</li>
         <li class="breadcrumb-item"><a href="#">{{ __('words.categories') }}</a>
         </li>
-        <li class="breadcrumb-item active">{{ __('words.add user') }}</li>
+        <li class="breadcrumb-item active">{{ __('words.add post') }}</li>
 
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                 <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
-                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{ __('words.categories') }}</a>
-                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('words.add user') }}</a>
+                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i>
+                    &nbsp;{{ __('words.categories') }}</a>
+                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i>
+                    &nbsp;{{ __('words.add user') }}</a>
             </div>
         </li>
     </ol>
 
-
     <div class="container-fluid">
-
         <div class="animated fadeIn">
             <form action="{{ Route('dashboard.posts.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -37,23 +37,17 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <strong>{{ __('words.users') }}</strong>
+                            <strong>{{ __('words.main details') }}</strong>
                         </div>
+
                         <div class="card-block">
-
-
-
-
                             <div class="form-group col-md-12">
                                 <label>{{ __('words.image') }}</label>
-                                <input type="file" name="image" class="form-control"
-                                    placeholder="{{ __('words.image') }}">
+                                <input type="file" name="image" class="form-control" placeholder="{{ __('words.image') }}">
                             </div>
 
-
-
                             <div class="form-group col-md-12">
-                                <label>{{ __('words.status') }}</label>
+                                <label>{{ __('words.section') }}</label>
                                 <select name="category_id" id="" class="form-control" required>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->title }}</option>
@@ -62,10 +56,6 @@
 
                             </div>
                         </div>
-
-
-
-
 
                         <div class="card">
                             <div class="card-header">
@@ -90,40 +80,32 @@
                                             <br>
                                             <div class="form-group mt-3 col-md-12">
                                                 <label>{{ __('words.title') }} - {{ $lang }}</label>
-                                                <input type="text" name="{{ $key }}[title]" class="form-control"
-                                                    placeholder="{{ __('words.title') }}">
+                                                <input type="text" name="{{ $key }}[title]"
+                                                    class="form-control" placeholder="{{ __('words.title') }}">
                                             </div>
 
                                             <div class="form-group col-md-12">
                                                 <label>{{ __('words.smallDesc') }}</label>
                                                 <textarea name="{{ $key }}[smallDesc]" class="form-control" id="editor" cols="50" rows="10"></textarea>
                                             </div>
-
-
                                             <div class="form-group col-md-12">
                                                 <label>{{ __('words.content') }}</label>
                                                 <textarea name="{{ $key }}[content]" class="form-control" id="editor" cols="50" rows="10"></textarea>
                                             </div>
-                                            
 
                                             <div class="form-group col-md-12">
                                                 <label>{{ __('words.tags') }}</label>
-                                                <textarea name="{{ $key }}[tags]" class="form-control" id="" ></textarea>
+                                                <textarea name="{{ $key }}[tags]" class="form-control" id=""></textarea>
                                             </div>
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
-                                Submit</button>
-
-                        </div>
-
-
-
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> {{ __('words.add post') }}</button>
                     </div>
+                </div>
             </form>
         </div>
     </div>

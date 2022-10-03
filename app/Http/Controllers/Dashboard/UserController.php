@@ -36,8 +36,7 @@ class UserController extends Controller
     }
 
 
-    public function getUsersDatatable()
-    {
+    public function getUsersDatatable () {
         if (auth()->user()->can('viewAny', $this->user)) {
         $data = User::select('*');
         }else{
@@ -51,9 +50,7 @@ class UserController extends Controller
                     $btn .= '<a href="' . Route('dashboard.users.edit', $row->id) . '"  class="edit btn btn-success btn-sm" ><i class="fa fa-edit"></i></a>';
                 }
                 if (auth()->user()->can('delete', $row)) {
-                    $btn .= '
-                        
-                        <a id="deleteBtn" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm"  data-toggle="modal" data-target="#deletemodal"><i class="fa fa-trash"></i></a>';
+                    $btn .= '<a id="deleteBtn" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm"  data-toggle="modal" data-target="#deletemodal"><i class="fa fa-trash"></i></a>';
                 }
                 return $btn;
             })

@@ -4,9 +4,8 @@
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">{{ __('words.dashboard') }}</li>
-        <li class="breadcrumb-item"><a href="#">{{ __('words.dashboard') }}</a>
+        <li class="breadcrumb-item"><a href="#">{{ __('words.users') }}</a>
         </li>
-        <li class="breadcrumb-item active">داشبرد</li>
     </ol>
 
 
@@ -15,7 +14,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-align-justify"></i> Striped Table
+                    <i class="fa fa-align-justify"></i>{{ __('words.usersTable') }}
                 </div>
                 <div class="card-block">
                     <table class="table table-striped" id="table_id">

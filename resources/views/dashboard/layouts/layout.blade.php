@@ -1,10 +1,3 @@
-<!--
- * CoreUI - Open Source Bootstrap Admin Template
- * @version v1.0.0-alpha.2
- * @link http://coreui.io
- * Copyright (c) 2016 creativeLabs Łukasz Holeczek
- * @license MIT
- -->
 <!DOCTYPE html>
 <html lang="IR-fa" dir="rtl">
 
@@ -24,15 +17,6 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
 
 </head>
-<!-- BODY options, add following classes to body to change options
-         1. 'compact-nav'     	  - Switch sidebar to minified version (width 50px)
-         2. 'sidebar-nav'		  - Navigation on the left
-             2.1. 'sidebar-off-canvas'	- Off-Canvas
-                 2.1.1 'sidebar-off-canvas-push'	- Off-Canvas which move content
-                 2.1.2 'sidebar-off-canvas-with-shadow'	- Add shadow to body elements
-         3. 'fixed-nav'			  - Fixed navigation
-         4. 'navbar-fixed'		  - Fixed navbar
-     -->
 
 <body class="navbar-fixed sidebar-nav fixed-nav">
     <header class="navbar">
@@ -43,14 +27,11 @@
                 <li class="nav-item">
                     <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
                 </li>
-
-
             </ul>
             <ul class="nav navbar-nav pull-left hidden-md-down">
-
                 <li class="nav-item dropdown" style="margin-left: 10px !important">
-                    {{ auth()->user()->name }}({{ auth()->user()->status }})</li>
-
+                    {{ auth()->user()->name }}({{ auth()->user()->status }})
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
@@ -65,39 +46,31 @@
                         <div class="divider"></div>
 
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                            document.getElementById('logout-form').submit();">
                             {{ __('words.logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-
                     </div>
                 </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
                         <span class="hidden-md-down">{{ LaravelLocalization::getCurrentLocaleNative() }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-
                         @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}"
                                 href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                 {{ $properties['native'] }}
                             </a>
                         @endforeach
-
                     </div>
                 </li>
-
-
                 <li class="nav-item">
-
                 </li>
-
             </ul>
         </div>
     </header>
@@ -106,13 +79,12 @@
     <main class="main">
         @yield('body')
     </main>
-
-
-
-    <footer class="footer">
-        <a href="http://coreui.io" target="_blank"> <span class="text-left">كورس انشاء مدونة إلكترونية
+    <footer class="footer text-center">
+        <a href="http://coreui.io" target="_blank">
+            <span class="text-center">كورس انشاء مدونة إلكترونية
                 &copy; 2022.
-            </span></a>
+            </span>
+        </a>
 
     </footer>
     <!-- Bootstrap and necessary plugins -->

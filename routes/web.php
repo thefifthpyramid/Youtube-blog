@@ -22,27 +22,17 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// website 
-
-
+/*
+ ######website 
+ */
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/categories/{category}', [WebsiteCategoryController::class, 'show'])->name('category');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
 
 
-
-
-
-
-
-
-
-
-
-
-// Dashboard
-
-
+/*
+Dashboard
+*/ 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
 
     Route::get('/', function () {

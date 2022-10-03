@@ -53,8 +53,8 @@ class PostsController extends Controller
 
                 if(auth()->user()->can('update', $row)){
                 return $btn = '
-                        <a href="' . Route('dashboard.posts.edit', $row->id) . '"  class="edit btn btn-success btn-sm" ><i class="fa fa-edit"></i></a>
-                        <a id="deleteBtn" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm"  data-toggle="modal" data-target="#deletemodal"><i class="fa fa-trash"></i></a>';
+                    <a href="' . Route('dashboard.posts.edit', $row->id) . '"  class="edit btn btn-success btn-sm" ><i class="fa fa-edit"></i></a>
+                    <a id="deleteBtn" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm"  data-toggle="modal" data-target="#deletemodal"><i class="fa fa-trash"></i></a>';
                 }else{
                     return;
                 }
@@ -85,7 +85,7 @@ class PostsController extends Controller
         $post = Post::create($request->except('image','_token'));
         $post->update(['user_id' => auth()->user()->id]);
         if ($request->has('image')) {
-           $post->update(['image'=>$this->upload($request->image)]);
+           $post->update(['image' => $this->upload($request->image)]);
         }
        return redirect()->route('dashboard.posts.index');
     }
